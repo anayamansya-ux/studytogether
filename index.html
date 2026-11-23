@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyTogether | UTBK Community</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9ff;
+    color: #30345c;
+    line-height: 1.7;
+}
+
+:root {
+    --blue: #5267d9;
+    --purple: #8267df;
+    --yellow: #ffcf70;
+    --dark: #30345c;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #30345c10;
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.nav-button {
+    background: var(--blue);
+    color: white;
+    padding: 10px 19px;
+    border-radius: 30px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(120deg, #e9ecff, #f4edff, #fff4dc);
+    padding: 75px 0;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.tag {
+    display: inline-block;
+    background: white;
+    color: var(--purple);
+    padding: 7px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero p {
+    color: #666b88;
+    font-size: 14px;
+    max-width: 500px;
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.primary {
+    background: var(--blue);
+    color: white;
+    box-shadow: 0 7px 18px #5267d944;
+}
+
+.primary:hover {
+    background: var(--purple);
+    transform: translateY(-3px);
+}
+
+.secondary {
+    color: var(--blue);
+    margin-left: 8px;
+}
+
+.hero-art {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-art svg {
+    width: 100%;
+    max-width: 470px;
+}
+
+/* SECTION */
+section {
+    padding: 75px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title small {
+    color: var(--purple);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.section-title p {
+    font-size: 13px;
+    color: #8589a3;
+}
+
+/* ABOUT */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-box {
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 5px 25px #30345c0c;
+}
+
+.about-box h3 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #777b96;
+    font-size: 14px;
+}
+
+.about-art {
+    background: #f0edff;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-art svg {
+    width: 100%;
+    max-width: 380px;
+}
+
+/* KEGIATAN */
+.benefits {
+    background: #f0f1ff;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 27px;
+    transition: .3s;
+    box-shadow: 0 5px 20px #30345c09;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.emoji {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #8589a3;
+}
+
+/* VIDEO */
+.video-section {
+    background: white;
+}
+
+.video-box {
+    max-width: 850px;
+    margin: auto;
+    background: #f0edff;
+    padding: 15px;
+    border-radius: 22px;
+}
+
+.thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 14px;
+    display: block;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5267d9 0%, #8267df 55%, #30345c 100%);
+    color: inherit;
+    text-decoration: none;
+}
+
+.thumbnail img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+    z-index: 1;
+}
+
+/* Poster cadangan tetap terlihat jika server thumbnail YouTube gagal dimuat */
+.thumbnail-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+    text-align: center;
+    background: radial-gradient(circle at 78% 20%, #ffcf70 0 7%, transparent 7.5%),
+                radial-gradient(circle at 18% 78%, #a18be9 0 9%, transparent 9.5%),
+                linear-gradient(135deg, #5267d9, #8267df 58%, #30345c);
+}
+
+.thumbnail-fallback .fallback-icon {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1;
+}
+
+.thumbnail-fallback strong {
+    font-size: clamp(16px, 3vw, 25px);
+    letter-spacing: .5px;
+}
+
+.thumbnail-fallback small {
+    font-size: 12px;
+    opacity: .9;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.05);
+    filter: brightness(70%);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75px;
+    height: 55px;
+    background: #ff3030;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 5px 20px #0005;
+}
+
+.thumbnail-text {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    color: white;
+    text-shadow: 0 2px 8px #000;
+}
+
+.thumbnail-text span {
+    background: #8267df;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.thumbnail-text h3 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+.video-caption {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+    color: #777b96;
+}
+
+/* FORM */
+.register {
+    background: linear-gradient(120deg, #e9ecff, #f6efff);
+}
+
+.form-container {
+    max-width: 720px;
+    background: white;
+    margin: auto;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px #30345c12;
+}
+
+.form-container h3 {
+    font-size: 23px;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--blue);
+}
+
+.form-container > p {
+    text-align: center;
+    font-size: 13px;
+    color: #8589a3;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e0e2f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    background: #fafaff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #a9b3ff;
+    border-color: var(--blue);
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    margin-top: 22px;
+    padding: 15px;
+    background: var(--blue);
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submit-button:hover {
+    background: var(--purple);
+}
+
+/* ASIDE */
+aside {
+    background: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+aside h3 {
+    color: var(--purple);
+    margin-bottom: 8px;
+}
+
+aside p {
+    color: #8589a3;
+    font-size: 13px;
+}
+
+/* FOOTER */
+footer {
+    background: #30345c;
+    color: white;
+    padding: 35px 15px;
+    text-align: center;
+}
+
+footer h3 {
+    color: #c5caff;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 12px;
+    color: #c4c6dc;
+    margin: 5px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 750px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER DAN NAVIGATION -->
+<header>
+<nav>
+    <div class="logo">Study<span>Together.</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#benefit">Kegiatan</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#register">Daftar</a></li>
+    </ul>
+
+    <a href="#register" class="button nav-button">Join Us!</a>
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<article class="hero" id="home">
+<div class="container hero-content">
+
+    <div class="hero-text">
+        <span class="tag">✨ UTBK STUDY COMMUNITY 2026</span>
+
+        <h1>
+            Grow Together,<br>
+            <span>Achieve Together!</span>
+        </h1>
+
+        <p>
+            Satu komunitas, banyak mimpi, dan satu tujuan!
+            Yuk, persiapkan UTBK bersama teman-teman
+            kelas XII SMAN 2 Cimahi. Belajar jadi lebih
+            menyenangkan kalau dilakukan bersama.
+        </p>
+
+        <a href="#register" class="button primary">
+            Gabung Sekarang →
+        </a>
+
+        <a href="#about" class="button secondary">
+            Pelajari lebih lanjut
+        </a>
+    </div>
+
+    <!-- KARTUN SISWA BELAJAR -->
+    <div class="hero-art">
+    <svg viewBox="0 0 500 370" xmlns="http://www.w3.org/2000/svg">
+
+        <circle cx="250" cy="180" r="155" fill="#d9dcff"/>
+        <circle cx="390" cy="65" r="25" fill="#ffcf70"/>
+        <circle cx="90" cy="95" r="13" fill="#a18be9"/>
+
+        <path d="M100 300 Q250 260 400 300 L430 350 L70 350Z"
+              fill="#b9b9f6"/>
+
+        <rect x="105" y="245" width="290" height="17"
+              rx="8" fill="#bd805a"/>
+        <rect x="130" y="260" width="15" height="80" fill="#9d684e"/>
+        <rect x="355" y="260" width="15" height="80" fill="#9d684e"/>
+
+        <path d="M170 225 L250 220 L250 247 L170 250Z"
+              fill="#ffcf70"/>
+        <path d="M250 220 L330 225 L330 250 L250 247Z"
+              fill="white"/>
+
+        <path d="M185 160 Q250 130 315 160 L340 245
+                 L160 245Z" fill="#7184e8"/>
+
+        <circle cx="250" cy="105" r="48" fill="#f4bb91"/>
+
+        <path d="M204 100 Q195 45 250 48
+                 Q310 45 299 105
+                 Q285 78 264 76
+                 Q235 95 204 100Z"
+              fill="#49352f"/>
+
+        <circle cx="233" cy="110" r="4" fill="#30345c"/>
+        <circle cx="268" cy="110" r="4" fill="#30345c"/>
+        <path d="M238 130 Q250 140 263 130"
+              stroke="#a65e58" stroke-width="3"
+              fill="none" stroke-linecap="round"/>
+
+        <path d="M185 175 Q140 195 190 222"
+              stroke="#f4bb91" stroke-width="17"
+              fill="none" stroke-linecap="round"/>
+
+        <path d="M315 175 Q360 195 310 222"
+              stroke="#f4bb91" stroke-width="17"
+              fill="none" stroke-linecap="round"/>
+
+        <rect x="292" y="202" width="7" height="45"
+              rx="3" fill="#ffcf70"
+              transform="rotate(20 292 202)"/>
+
+        <text x="55" y="175" font-size="30">✦</text>
+        <text x="410" y="190" font-size="28">✧</text>
+        <text x="370" y="110" font-size="23">📚</text>
+        <text x="90" y="260" font-size="25">⭐</text>
+    </svg>
+    </div>
+
+</div>
+</article>
+
+<!-- TENTANG -->
+<section id="about">
+<div class="container">
+
+    <div class="section-title">
+        <small>ABOUT OUR COMMUNITY</small>
+        <h2>Kenalan dengan StudyTogether!</h2>
+        <p>Belajar bukan tentang siapa yang paling pintar, tetapi siapa yang mau berkembang.</p>
+    </div>
+
+    <div class="about">
+
+        <div class="about-box">
+            <h3>📖 Apa itu StudyTogether?</h3>
+
+            <p>
+                StudyTogether merupakan komunitas belajar bersama
+                yang ditujukan untuk siswa dan siswi kelas XII
+                SMAN 2 Cimahi dalam mempersiapkan diri menghadapi
+                UTBK-SNBT.
+            </p>
+
+            <br>
+
+            <p>
+                Melalui komunitas ini, siswa dapat saling berbagi
+                pengetahuan, berdiskusi, mengerjakan latihan soal,
+                serta memberikan motivasi satu sama lain demi
+                mencapai perguruan tinggi impian.
+            </p>
+        </div>
+
+        <div class="about-art">
+            <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+
+                <rect x="30" y="30" width="340" height="220"
+                      rx="30" fill="#ddd9ff"/>
+
+                <rect x="75" y="65" width="250" height="150"
+                      rx="12" fill="white"/>
+
+                <rect x="95" y="85" width="90" height="110"
+                      rx="8" fill="#ffdb91"/>
+
+                <rect x="205" y="85" width="100" height="12"
+                      rx="5" fill="#7184e8"/>
+                <rect x="205" y="110" width="80" height="9"
+                      rx="5" fill="#d0d4f8"/>
+                <rect x="205" y="130" width="90" height="9"
+                      rx="5" fill="#d0d4f8"/>
+                <rect x="205" y="150" width="65" height="9"
+                      rx="5" fill="#d0d4f8"/>
+
+                <circle cx="140" cy="120" r="23" fill="#f4bb91"/>
+                <path d="M117 120 Q110 85 140 90
+                         Q168 85 164 120Z" fill="#49352f"/>
+                <path d="M115 160 Q140 135 165 160"
+                      stroke="#7184e8" stroke-width="25"
+                      fill="none" stroke-linecap="round"/>
+
+                <text x="315" y="55" font-size="30">⭐</text>
+                <text x="35" y="220" font-size="25">📚</text>
+                <text x="340" y="230" font-size="25">✨</text>
+            </svg>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- KEGIATAN -->
+<section class="benefits" id="benefit">
+<div class="container">
+
+    <div class="section-title">
+        <small>OUR ACTIVITIES</small>
+        <h2>What Will We Do?</h2>
+        <p>Berbagai kegiatan seru untuk mempersiapkan UTBK bersama!</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="emoji">📚</div>
+            <h3>Study Together</h3>
+            <p>Belajar materi UTBK bersama dan saling membantu memahami materi yang sulit.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">📝</div>
+            <h3>Practice Questions</h3>
+            <p>Mengerjakan soal latihan dan membahas strategi penyelesaian soal UTBK.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💡</div>
+            <h3>Group Discussion</h3>
+            <p>Bertukar pendapat, berdiskusi, dan berbagi tips belajar bersama.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⏰</div>
+            <h3>Study Schedule</h3>
+            <p>Mengatur waktu belajar agar persiapan UTBK menjadi lebih terarah.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎯</div>
+            <h3>Try Out UTBK</h3>
+            <p>Mengikuti latihan simulasi UTBK untuk mengukur kesiapan diri.</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🤝</div>
+            <h3>Support Each Other</h3>
+            <p>Saling menyemangati dan mendukung teman dalam meraih kampus impian.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- VIDEO YOUTUBE DENGAN THUMBNAIL -->
+<section class="video-section" id="video">
+<div class="container">
+
+    <div class="section-title">
+        <small>LEARN SOMETHING NEW</small>
+        <h2>Let's Learn Together! 🎬</h2>
+        <p>Video pembelajaran untuk menemani persiapan UTBK kamu.</p>
+    </div>
+
+    <div class="video-box">
+
+        <a class="thumbnail" id="videoThumbnail"
+           href="https://www.youtube.com/watch?v=yGY2NSGJAFc"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Tonton video pembelajaran UTBK di YouTube (terbuka di tab baru)">
+
+            <div class="thumbnail-fallback" aria-hidden="true">
+                <div class="fallback-icon">📚</div>
+                <strong>LET'S PREPARE FOR UTBK!</strong>
+                <small>STUDY TOGETHER · VIDEO PEMBELAJARAN</small>
+            </div>
+
+            <img
+                src="https://i.ytimg.com/vi/yGY2NSGJAFc/hqdefault.jpg"
+                alt="Thumbnail Video Pembelajaran UTBK"
+                onerror="this.style.display='none'">
+
+            <div class="play-button" aria-hidden="true">▶</div>
+
+            <div class="thumbnail-text">
+                <span>STUDY TOGETHER</span>
+                <h3>Let's Prepare for UTBK!</h3>
+            </div>
+
+        </a>
+    </div>
+
+    <p class="video-caption">
+        ✨ Belajar bersama, raih kampus impian!
+    </p>
+
+</div>
+</section>
+
+<!-- FORM PENDAFTARAN -->
+<section class="register" id="register">
+<div class="container">
+
+    <div class="section-title">
+        <small>JOIN OUR COMMUNITY</small>
+        <h2>Ready to Join Us? 💜</h2>
+        <p>Isi formulir berikut dan jadilah bagian dari StudyTogether!</p>
+    </div>
+
+    <div class="form-container">
+
+        <h3>Registration Form</h3>
+        <p>Formulir Pendaftaran Komunitas Belajar UTBK Bersama</p>
+
+        <form id="registrationForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap *</label>
+                    <input type="text" id="nama" name="nama"
+                           placeholder="Masukkan nama lengkap"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="kelas">Kelas *</label>
+                    <select id="kelas" name="kelas" required>
+                        <option value="">Pilih kelas</option>
+                        <option value="XII-1">XII-1</option>
+                        <option value="XII-2">XII-2</option>
+                        <option value="XII-3">XII-3</option>
+                        <option value="XII-4">XII-4</option>
+                        <option value="XII-5">XII-5</option>
+                        <option value="XII-6">XII-6</option>
+                        <option value="XII-7">XII-7</option>
+                        <option value="XII-8">XII-8</option>
+                        <option value="XII-9">XII-9</option>
+                        <option value="XII-10">XII-10</option>
+                        <option value="XII-11">XII-11</option>
+                        <option value="XII-12">XII-12</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="nama@email.com"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomor">Nomor WhatsApp *</label>
+                    <input type="number" id="nomor" name="nomor"
+                           placeholder="Contoh: 628123456789"
+                           min="1" required>
+                </div>
+
+                <div class="form-group full">
+                    <label for="minat">Bidang yang Ingin Dipelajari *</label>
+                    <select id="minat" name="minat" required>
+                        <option value="">Pilih bidang belajar</option>
+                        <option>Penalaran Umum</option>
+                        <option>Pengetahuan dan Pemahaman Umum</option>
+                        <option>Pemahaman Bacaan dan Menulis</option>
+                        <option>Pengetahuan Kuantitatif</option>
+                        <option>Literasi Bahasa Indonesia</option>
+                        <option>Literasi Bahasa Inggris</option>
+                        <option>Penalaran Matematika</option>
+                        <option>Semua Materi UTBK</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label for="alasan">Alasan Bergabung *</label>
+                    <textarea id="alasan" name="alasan" rows="4"
+                              placeholder="Ceritakan alasan kamu ingin bergabung..."
+                              required></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-button">
+                🚀 Kirim Pendaftaran
+            </button>
+
+            <p style="font-size:11px; margin-top:12px;">
+                * Wajib diisi sebelum mengirim formulir.
+            </p>
+
+        </form>
+
+    </div>
+</div>
+</section>
+
+<!-- ASIDE -->
+<aside>
+    <h3>💜 A Little Reminder!</h3>
+    <p>
+        "Tidak harus menjadi yang paling hebat untuk memulai,
+        tetapi harus memulai untuk menjadi hebat."
+    </p>
+    <p><strong>See you at StudyTogether!</strong></p>
+</aside>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h3>StudyTogether. 📚</h3>
+    <p>Komunitas Belajar UTBK Bersama</p>
+    <p>SMAN 2 Cimahi | Kelas XII</p>
+    <p>Grow Together, Achieve Together!</p>
+    <br>
+    <p>© 2026 StudyTogether Community. All Rights Reserved.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// Thumbnail video berupa tautan langsung ke YouTube (dibuka di tab baru).
+
+// VALIDASI FORM PENDAFTARAN
+const form = document.getElementById("registrationForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (form.checkValidity()) {
+
+        const nama = document.getElementById("nama").value;
+
+        alert(
+            "🎉 PENDAFTARAN BERHASIL! 🎉\n\n" +
+            "Halo, " + nama + "!\n\n" +
+            "Terima kasih sudah bergabung dengan " +
+            "StudyTogether Community.\n\n" +
+            "Let's grow and achieve together! 💜"
+        );
+
+        form.reset();
+
+    } else {
+
+        form.reportValidity();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
